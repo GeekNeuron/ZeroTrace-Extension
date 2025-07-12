@@ -99,14 +99,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   });
 
-    const clearDataBtn = document.getElementById('clearDataBtn');
-
-  if (clearDataBtn) {
-    clearDataBtn.addEventListener('click', () => {
-      clearDataBtn.disabled = true;
-      clearDataBtn.textContent = 'Clearing...';
-      chrome.runtime.sendMessage({ action: "clearPrivacyData" });
-      setTimeout(() => window.close(), 2000);
-    });
-  }
 });
