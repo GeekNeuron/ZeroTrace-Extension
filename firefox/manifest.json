@@ -12,7 +12,7 @@
     "<all_urls>", "https://worldtimeapi.org/", "http://ip-api.com/", "https://api.bigdatacloud.net/"
   ],
   "background": {
-    "scripts": ["browser-polyfill.js", "background.js"]
+    "scripts": ["background.js"]
   },
   "action": {
     "default_title": "ZeroTrace",
