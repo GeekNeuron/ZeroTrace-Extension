@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help & Guide</title>
+  <link rel="icon" type="image/png" href="icons/icon-on-48.png">
+<style>
+    :root {
+      --bg-color: #f8f9fa;
+      --surface-color: #ffffff;
+      --text-color: #212529;
+      --header-color: #0d6efd;
+      --secondary-text-color: #6c757d;
+      --border-color: #dee2e6;
+      --accent-color: #0d6efd;
+      --switch-bg: #ced4da;
+      --danger-color: #dc3545;
+    }
+    body.dark-theme {
+      --bg-color: #121212;
+      --surface-color: #1e1e1e;
+      --text-color: #e9ecef;
+      --header-color: #589dff;
+      --secondary-text-color: #adb5bd;
+      --border-color: #495057;
+      --accent-color: #589dff;
+      --switch-bg: #495057;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.2s, color 0.2s;
+      user-select: none;
+     -webkit-user-select: none;
+    }
+    h1, h2 {
+      text-align: center;
+      color: var(--header-color);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    h3 { color: var(--header-color); }
+    p { color: var(--secondary-text-color); line-height: 1.6; }
+    a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    .setting-group, .section {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    body.dark-theme .setting-group, body.dark-theme .section {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .header-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 1rem; }
+    .header-subtitle { margin: 5px 0 1rem 0; font-size: 1em; font-weight: 500; color: var(--secondary-text-color); }
+
+    .setting-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+    .setting-row:last-child { border-bottom: none; }
+    label { font-weight: 500; }
+    textarea { width: 100%; box-sizing: border-box; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); font-family: inherit; }
+    button, .remove-btn {
+        padding: 0.5rem 1rem; font-size: 0.9em; font-weight: 600; cursor: pointer; border: none;
+        border-radius: 6px; transition: transform 0.1s ease-in-out;
+    }
+    button:active, .remove-btn:active { transform: scale(0.98); }
+    #save-blocklists { background-color: var(--accent-color); color: white; }
+    .remove-btn { background-color: var(--danger-color); color: white; }
+
+    ul { list-style: none; padding: 0; }
+    li { display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid var(--border-color); word-break: break-all; }
+    li:last-child { border-bottom: none; }
+    code, .wallet-address { background-color: var(--bg-color); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-color); font-family: monospace; user-select: all; }
+
+    .switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--switch-bg); transition: .4s; border-radius: 26px; }
+    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: var(--header-color); }
+    input:checked + .slider:before { transform: translateX(24px); }
+</style>
+</head>
+<body>
+  <div class="header-container">
+    <img src="icons/icon-on-128.png" alt="Privacy Shield Icon" width="48" height="48">
+    <p class="header-subtitle">Your Advanced Privacy Shield</p>
+  </div>
+  <h1>ZeroTrace Complete Guide</h1>
+
+  <div class="section">
+    <h2>Introduction</h2>
+    <p>This extension is a comprehensive tool designed to protect your privacy online. Its primary goal is to give you full control over your digital fingerprint and to prevent tracking and information leaks. This guide explains each feature and how to verify its functionality.</p>
+  </div>
+
+  <div class="section">
+    <h2>Settings Guide</h2>
+    <h3>Dark Mode</h3>
+    <p>For better eye comfort in low-light environments, you can switch the extension's appearance to a dark theme. Use the "Dark Mode" toggle on the Settings page. This preference will be applied to the popup, settings, and help pages.</p>
+    
+    <h3>Blocklist Management</h3>
+    <p>In addition to the default blocklist, you can add URLs for other Adblock-compatible filter lists in the "Blocklist Management" section on the Settings page. Enter each URL on a new line, then click the "Save and Update Rules" button to apply the new rules.</p>
+  </div>
+
+  <div class="section">
+    <h2>Feature Breakdown</h2>
+    <h3>1. WebRTC Leak Protection</h3>
+    <p><b>The Problem:</b> WebRTC is a communication technology in browsers that can reveal your real IP address, even when you are using a VPN.<br><b>The Solution:</b> This feature restricts WebRTC's network pathways, forcing all of its traffic through your VPN tunnel and preventing IP leaks.</p>
+    
+    <h3>2. Tracker Blocker</h3>
+    <p><b>The Problem:</b> Websites use third-party scripts to track your behavior across the internet.<br><b>The Solution:</b> Using a dynamically updated blocklist, this feature blocks outgoing requests to thousands of known advertising and tracking domains.</p>
+    
+    <h3>3. Anti-Fingerprinting</h3>
+    <p><b>The Problem:</b> Websites collect minor details about your system (like installed fonts, graphics card, and audio settings) to create a unique ID for you.<br><b>The Solution:</b> By modifying and adding "noise" to the output of the <code>Canvas</code>, <code>WebGL</code>, and <code>AudioContext</code> APIs, this feature prevents a stable ID from being created.</p>
+    
+    <h3>4. Location Spoofing</h3>
+    <p><b>The Problem:</b> Mismatches between your location data (language, timezone, geolocation) and your new IP address are a clear flag used to identify you.<br><b>The Solution:</b> This feature automatically aligns your browser's timezone, geolocation, and language with your VPN server's location, making your digital identity appear consistent and trustworthy.</p>
+  </div>
+
+  <div class="section">
+    <h2>How to Test Functionality</h2>
+    <p>To ensure each feature is working correctly, you can use the following specialized websites:</p>
+    <ul>
+      <li><strong>WebRTC & IP Leak Test:</strong> Go to <a href="https://browserleaks.com/webrtc" target="_blank">browserleaks.com/webrtc</a>. With the extension active, no IP address other than your VPN's IP should be visible.</li>
+      <li><strong>Fingerprinting Test (Canvas, WebGL, Audio):</strong> Visit <a href="https://coveryourtracks.eff.org" target="_blank">coveryourtracks.eff.org</a>. Run the test, then refresh the page and run it again. The generated hashes for these three categories should change with each test.</li>
+      <li><strong>Timezone & Language Test:</strong> Go to <a href="https://browserleaks.com/javascript" target="_blank">browserleaks.com/javascript</a>. The "Timezone" and "Language" values should match the country of your VPN server.</li>
+      <li><strong>Geolocation Test:</strong> On <a href="https://www.google.com/maps" target="_blank">Google Maps</a>, click the "My Location" button. Your position should be centered near your VPN server's city.</li>
+      <li><strong>Tracker Blocking Test:</strong> Visit an ad-heavy news site and open the Developer Tools (F12) to the "Network" tab. After reloading the page, you should see many requests colored red and marked with a status of <code>(blocked:by-extension)</code>.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Support the Project</h2>
+    <ul style="list-style-type: none; padding: 0;">
+        <li style="flex-direction: column; align-items: flex-start;"><span>Bitcoin (BTC):</span> <code class="wallet-address">bc1q...placeholder...xyz</code></li>
+        <li style="flex-direction: column; align-items: flex-start;"><span>Ethereum (ETH):</span> <code class="wallet-address">0x123...placeholder...abc</code></li>
+        <li style="flex-direction: column; align-items: flex-start;"><span>Monero (XMR):</span> <code class="wallet-address">442A...placeholder...def</code></li>
+    </ul>
+    <p style="text-align:center; margin-top: 20px;">Created with ❤️ by GeekNeuron</p>
+  </div>
+
+  <script src="help.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ZeroTrace Settings</title>
+  <link rel="icon" type="image/png" href="icons/icon-on-48.png">
+  <style>
+    :root {
+        --bg-color: #f9f9f9; --surface-color: #ffffff; --text-color: #333333;
+        --header-color: #1a73e8; --secondary-text-color: #5f6368;
+        --border-color: #ddd; --accent-color: #0057e7; --switch-bg: #ccc;
+    }
+    body.dark-theme {
+        --bg-color: #202124; --surface-color: #2d2e30; --text-color: #e8eaed;
+        --header-color: #8ab4f8; --secondary-text-color: #969ba1;
+        --border-color: #5f6368; --accent-color: #8ab4f8; --switch-bg: #5f6368;
+    }
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.2s, color 0.2s;
+      user-select: none;
+     -webkit-user-select: none;
+    }
+    h1, h2 { text-align: center; color: var(--header-color); }
+    p { color: var(--secondary-text-color); }
+    a { color: var(--accent-color); text-decoration: none; }
+    .setting-group { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+    .setting-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+    .setting-row:last-child { border-bottom: none; }
+    label { font-weight: bold; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid var(--border-color); }
+    li:last-child { border-bottom: none; }
+    .remove-btn { background-color: #d32f2f; color: white; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; }
+    textarea { width: 100%; box-sizing: border-box; padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); }
+    button { padding: 8px 16px; font-size: 1em; cursor: pointer; border: 1px solid var(--border-color); border-radius: 5px; }
+    .switch { position: relative; display: inline-block; width: 50px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--switch-bg); transition: .4s; border-radius: 24px; }
+    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: var(--header-color); }
+    input:checked + .slider:before { transform: translateX(26px); }
+    .header-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
+    .header-subtitle { margin: 5px 0 0 0; font-size: 0.9em; font-weight: bold; color: var(--secondary-text-color); }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <img src="icons/icon-on-128.png" alt="Privacy Shield Icon" width="48" height="48">
+    <p class="header-subtitle">Your Advanced Privacy Shield</p>
+  </div>
+
+  <h1>ZeroTrace Settings</h1>
+  
+  <div class="setting-group">
+    <h2>Appearance</h2>
+    <div class="setting-row">
+      <label>Dark Mode</label>
+      <label class="switch">
+        <input type="checkbox" data-setting="darkMode">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="setting-group">
+    <h2>Protection Features</h2>
+    <div class="setting-row">
+      <label>WebRTC Leak Protection</label>
+      <label class="switch"><input type="checkbox" data-setting="webrtc"><span class="slider"></span></label>
+    </div>
+    <div class="setting-row">
+      <label>Tracker Blocker</label>
+      <label class="switch"><input type="checkbox" data-setting="tracker"><span class="slider"></span></label>
+    </div>
+    <div class="setting-row">
+      <label>Fingerprint Protection</label>
+      <label class="switch"><input type="checkbox" data-setting="fingerprint"><span class="slider"></span></label>
+    </div>
+    <div class="setting-row">
+      <label>Timezone Spoofing</label>
+      <label class="switch"><input type="checkbox" data-setting="timezone"><span class="slider"></span></label>
+    </div>
+    <div class="setting-row">
+      <label>Geolocation Spoofing</label>
+      <label class="switch"><input type="checkbox" data-setting="geolocation"><span class="slider"></span></label>
+    </div>
+    <div class="setting-row">
+      <label>Language Spoofing</label>
+      <label class="switch"><input type="checkbox" data-setting="language"><span class="slider"></span></label>
+    </div>
+  </div>
+  
+  <div class="setting-group">
+    <h2>Blocklist Management</h2>
+    <p>Add or remove custom blocklist URLs (one URL per line).</p>
+    <textarea id="blocklist-urls" rows="5" placeholder="https://example.com/blocklist.txt"></textarea>
+    <button id="save-blocklists" style="margin-top: 10px;">Save and Update Rules</button>
+  </div>
+
+  <div class="setting-group">
+    <h2>Whitelisted Sites</h2>
+    <p>Sites listed here are not protected by the tracker blocker.</p>
+    <ul id="whitelist-list"></ul>
+  </div>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

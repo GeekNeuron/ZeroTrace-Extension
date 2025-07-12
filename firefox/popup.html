@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ZeroTrace</title>
+  <style>
+    :root {
+        --bg-color: #ffffff; --surface-color: #f1f3f4; --text-color: #202124;
+        --header-color: #1a73e8; --secondary-text-color: #5f6368;
+        --border-color: #dadce0; --accent-color: #1a73e8;
+    }
+    body.dark-theme {
+        --bg-color: #202124; --surface-color: #3c4043; --text-color: #e8eaed;
+        --header-color: #8ab4f8; --secondary-text-color: #969ba1;
+        --border-color: #5f6368; --accent-color: #8ab4f8;
+    }
+    html {
+      border-radius: 10px;
+    }
+    body {
+      font-family: sans-serif;
+      width: 280px;
+      text-align: center;
+      padding: 15px;
+      margin: 0;
+      overflow: hidden;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      user-select: none;
+     -webkit-user-select: none;
+    }
+    button { 
+        padding: 8px 12px; font-size: 0.9em; font-weight: bold; cursor: pointer; border: 1px solid var(--border-color);
+        border-radius: 5px; width: 100%; box-sizing: border-box; 
+        background-color: var(--surface-color); color: var(--text-color);
+    }
+    button:hover { background-color: var(--border-color); }
+    hr { border: none; border-top: 1px solid var(--border-color); margin: 12px 0; }
+    a { color: var(--accent-color); text-decoration: none; font-size: 0.9em; }
+    a:hover { text-decoration: underline; }
+    p { color: var(--secondary-text-color); margin: 5px 0; }
+    
+    .header-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
+    .header-subtitle { margin: 5px 0 0 0; font-size: 0.9em; font-weight: bold; }
+    #global-status { font-weight: bold; font-size: 1.1em; padding: 10px; border-radius: 5px; margin-bottom: 10px; }
+    .on { color: white; background-color: #34A853; }
+    .off { color: white; background-color: #5F6368; }
+    
+    #counter-section { padding: 8px; background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; }
+    #blocked-count { font-size: 1.5em; font-weight: bold; color: #d32f2f; }
+
+    #live-test-section { display: none; margin-top: 10px; text-align: left; font-size: 0.85em; background-color: var(--surface-color); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; }
+    #live-test-section p { margin: 5px 0; }
+    #live-test-section strong { color: var(--header-color); }
+    .test-result { font-weight: bold; }
+
+    #site-controls { font-size: 0.9em; }
+    #current-site { font-weight: bold; color: var(--accent-color); word-break: break-all; margin-top: 5px; margin-bottom: 10px;}
+    #toggleSiteBtn { background-color:#4285F4; color:white; border:none; }
+    body.dark-theme #toggleSiteBtn { background-color: #8ab4f8; color: #202124; }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <img src="icons/icon-on-128.png" alt="Privacy Shield Icon" width="48" height="48">
+    <p class="header-subtitle">ZeroTrace - Your Advanced Privacy Shield</p>
+  </div>
+
+  <div id="global-status">Loading...</div>
+  <button id="toggleGlobalBtn">Toggle Protection</button>
+
+  <hr>
+
+  <div id="counter-section">
+    <span id="blocked-count">0</span>
+    <p style="margin:0; font-size:0.9em;">trackers blocked on this page.</p>
+  </div>
+  
+  <button id="runTestBtn" style="background-color: #fbbc05; color: black; border: none;">Run Live Test</button>
+  <button id="clearDataBtn" style="background-color: #dc3545; color: white; border: none; margin-top: 8px;">Clear Private Data & Reload</button>
+
+  <div id="live-test-section">
+    <p><strong>Current IP Address:</strong> <span id="test-ip" class="test-result">Testing...</span></p>
+    <hr>
+    <p style="text-align:center;">For advanced tests, use these links:</p>
+    <div style="display: flex; justify-content: space-around;">
+      <a href="https://browserleaks.com/webrtc" target="_blank">WebRTC Test</a>
+      <a href="https://coveryourtracks.eff.org" target="_blank">Fingerprint Test</a>
+    </div>
+  </div>
+  
+  <hr>
+
+  <div id="site-controls">
+     <p style="margin:0">Controls for:</p>
+     <p id="current-site">...</p>
+     <button id="toggleSiteBtn">Disable for this site</button>
+  </div>
+
+  <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
+    <a href="#" id="open-options">⚙️ Settings</a>
+    <a href="#" id="open-help">❓ Guide</a>
+  </div>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
