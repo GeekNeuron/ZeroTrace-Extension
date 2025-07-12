@@ -1,0 +1,4 @@
+Error in event handler: TypeError: Cannot read properties of undefined (reading 'remove')
+    at chrome-extension://ifoifclkchfgfhefknlpnfefmlmfmchi/background.js:278:25
+Error in event handler: TypeError: Cannot read properties of undefined (reading 'remove')
+    at chrome-extension://ifoifclkchfgfhefknlpnfefmlmfmchi/background.js:278:25
