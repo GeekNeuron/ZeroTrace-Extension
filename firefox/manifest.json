@@ -6,7 +6,7 @@
   "options_page": "options.html",
   "permissions": [
     "privacy", "storage", "declarativeNetRequest", "declarativeNetRequestWithHostAccess",
-    "alarms", "tabs", "scripting", "webRequest", "BrowseData"
+    "alarms", "tabs", "scripting", "webRequest"
   ],
   "host_permissions": [
     "<all_urls>", "https://worldtimeapi.org/", "http://ip-api.com/", "https://api.bigdatacloud.net/"
