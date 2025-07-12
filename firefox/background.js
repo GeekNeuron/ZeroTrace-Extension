@@ -263,22 +263,6 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     case "getTabCount":
       sendResponse({ count: blockedCounts[request.tabId] || 0 });
       break;
-    
-    case "clearPrivacyData":
-      const dataTypesToRemove = {
-        "cache": true,
-        "cookies": true,
-        "localStorage": true,
-        "indexedDB": true,
-        "serviceWorkers": true
-      };
-
-      const timePeriod = { since: (new Date()).getTime() - (24 * 60 * 60 * 1000) };
-
-      browser.BrowseData.remove(timePeriod, dataTypesToRemove, () => {
-        reloadAllTabs();
-      });
-      break;
 
   }
   return true;
