@@ -1,4 +1,4 @@
-# ZeroTrace Extension 🛡️
+# ZeroTrace Extension
 
 An advanced, open-source browser extension for comprehensive privacy protection, anti-tracking, and digital identity management, with support for both Chrome and Firefox.
 
