@@ -35,6 +35,21 @@ This extension is an all-in-one solution designed to protect you against a wide 
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="path/to/your/screenshot_popup.png" alt="Main Popup" width="300">
+  <br>
+  <em>Main Popup Interface (Light & Dark Mode)</em>
+</p>
+<p align="center">
+  <img src="path/to/your/screenshot_options.png" alt="Options Page" width="600">
+  <br>
+  <em>Advanced Settings Page</em>
+</p>
+
+---
+
 ## Installation
 
 This project now contains separate versions for Chrome and Firefox. Please follow the instructions for your browser.
@@ -66,6 +81,17 @@ The extension is now installed and ready to use.
 
 ---
 
+## Technology Stack
+
+* **Manifest V3:** The latest extension standard for enhanced security and performance.
+* **JavaScript (ES6+):** Used to implement all of the extension's logic.
+* **`declarativeNetRequest` API:** For high-performance, privacy-preserving tracker blocking.
+* **`scripting` API:** To inject defensive scripts into web pages at runtime.
+* **`webRequest` API:** For monitoring network requests to count blocked trackers.
+* **HTML5 / CSS3:** To build the user interface for the popup and options page.
+
+---
+
 ## Support the Project
 
 If you find this extension useful, please consider supporting its development through one of the addresses below:
@@ -78,6 +104,6 @@ If you find this extension useful, please consider supporting its development th
 
 ## License
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
+This project is licensed under the **MIT License**.
 
 <p align="center">Created with ❤️ by GeekNeuron</p>
