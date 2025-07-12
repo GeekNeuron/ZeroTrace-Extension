@@ -27,6 +27,9 @@
     "48": "icons/icon-off-48.png",
     "128": "icons/icon-off-128.png"
   },
+    "content_security_policy": {
+    "extension_pages": "script-src 'self'; connect-src https://worldtimeapi.org/ http://ip-api.com/ https://api.bigdatacloud.net/;"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "addon@zerotrace.com",
