@@ -38,14 +38,15 @@ This extension is an all-in-one solution designed to protect you against a wide 
 ## Screenshots
 
 <p align="center">
-  <img src="path/to/your/screenshot_popup.png" alt="Main Popup" width="300">
+  <img src="chrome/chrome-screenshot.jpg" alt="ZeroTrace Screenshot" width="400">
   <br>
-  <em>Main Popup Interface (Light & Dark Mode)</em>
+  <em>(Chrome screenshot)</em>
 </p>
+
 <p align="center">
-  <img src="path/to/your/screenshot_options.png" alt="Options Page" width="600">
+  <img src="firefox/firefox-screenshot.jpg" alt="ZeroTrace Screenshot" width="400">
   <br>
-  <em>Advanced Settings Page</em>
+  <em>(Firefox screenshot)</em>
 </p>
 
 ---
